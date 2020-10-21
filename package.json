@@ -1,12 +1,13 @@
 {
   "name": "tsed-swagger-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application example with Ts.ED and @tsed/swagger",
   "scripts": {
     "build": "yarn tsc",
     "tsc": "tsc --project tsconfig.compile.json",
     "tsc:w": "tsc --project tsconfig.json -w",
-    "start": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
+    "start:dev": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/index.ts",
     "start:prod": "cross-env NODE_ENV=production node dist/index.js",
     "test": "yarn test:lint && yarn test:coverage",
     "test:unit": "cross-env NODE_ENV=test jest",
@@ -66,5 +67,6 @@
       "pre-commit": "lint-staged",
       "post-commit": "git update-index --again"
     }
-  }
+  },
+  "keywords": []
 }
